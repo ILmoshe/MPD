@@ -1,0 +1,7 @@
+pandas
+pydeck
+pydeck[jupyter]
+geopy
+python-dotenv
+pydantic
+ortools
