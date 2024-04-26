@@ -1,13 +1,15 @@
-# %%
-import pydeck as pdk
+import random
+
 import pandas as pd
-from pandas import DataFrame
+import pydeck as pdk
 from geopy.distance import distance
+from ortools.constraint_solver import pywrapcp, routing_enums_pb2
+from pandas import DataFrame
+from pydantic import BaseModel
 
 pd.options.display.max_colwidth = 250
 
 
-# %%
 def calculat_distances_warper(df: DataFrame):
     def calculat_distances(row):
         distances = {}
@@ -23,7 +25,6 @@ def calculat_distances_warper(df: DataFrame):
     return calculat_distances
 
 
-# %%
 departure_points = [
     {"latitude": 33.06035, "longitude": 35.14627, "elevation": 10},
     # {"latitude": 33.06031, "longitude": 35.15406, "elevation": 10},
@@ -48,14 +49,13 @@ vertices_to_explore = [
 ]
 
 
-# %%
 df_departure_points = pd.DataFrame(departure_points)
 df_departure_points["name"] = df_departure_points.apply(
     lambda row: f"depatrure_{row.name}", axis=1
 )
 df_departure_points
 
-# %%
+
 df_vertices_to_explore = pd.DataFrame(vertices_to_explore)
 df_vertices_to_explore["name"] = df_vertices_to_explore.apply(
     lambda row: f"explore_{row.name}", axis=1
@@ -63,7 +63,6 @@ df_vertices_to_explore["name"] = df_vertices_to_explore.apply(
 df_vertices_to_explore
 
 
-# %%
 def create_distance_matrix(df: DataFrame):
     distance_matrix = pd.DataFrame(index=df["name"], columns=df["name"])
     for _, row1 in df.iterrows():
@@ -81,7 +80,7 @@ distance_matrix_meters = create_distance_matrix(
 )
 distance_matrix_meters
 
-# %%
+
 view_state = pdk.ViewState(latitude=33.08913, longitude=35.14388, zoom=9)
 
 
@@ -106,10 +105,6 @@ vertices_to_explore_layer = pdk.Layer(
     point_size=8,
     auto_highlight=True,
 )
-
-
-# %%
-from pydantic import BaseModel
 
 
 class Drone(BaseModel):
@@ -163,11 +158,6 @@ drone_d = Drone(
 )
 
 
-# %%
-from ortools.constraint_solver import routing_enums_pb2
-from ortools.constraint_solver import pywrapcp
-
-
 def create_data_model():
     data = {
         "distance_matrix": distance_matrix_meters.values,  # Use the distance matrix you calculated
@@ -177,7 +167,6 @@ def create_data_model():
     return data
 
 
-# %%
 def model():
     data = create_data_model()
     manager = pywrapcp.RoutingIndexManager(
@@ -242,10 +231,6 @@ def print_solution(data, manager, routing, solution):
 
 
 data, manager, routing, solution = model()
-
-
-# %%
-import random
 
 
 def random_bright_rgba_color():
