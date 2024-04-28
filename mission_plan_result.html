@@ -35,7 +35,7 @@
   "initialViewState": {
     "latitude": 33.08913,
     "longitude": 35.14388,
-    "zoom": 9
+    "zoom": 12
   },
   "layers": [
     {
@@ -135,7 +135,7 @@
       ],
       "getPosition": "@@=[longitude, latitude, elevation]",
       "getRadius": 100,
-      "id": "27bd9038-5991-4fd4-ba76-b39fde59205c",
+      "id": "966eaf12-2b58-4892-b1e1-3c92b408e4ab",
       "pickable": true,
       "pointSize": 8
     },
@@ -158,57 +158,79 @@
       ],
       "getPosition": "@@=[longitude, latitude, elevation]",
       "getRadius": 100,
-      "id": "c95e596f-5846-4c17-8073-52d3c39e2375",
+      "id": "9346ab9f-9d46-4148-a102-808b9c999eda",
       "pickable": true,
       "pointSize": 10
     },
     {
-      "@@type": "LineLayer",
-      "autoHighlight": true,
+      "@@type": "PathLayer",
       "data": [
         {
-          "drone_id": "first",
-          "source": [
-            35.14627,
-            33.06035,
-            1000
-          ],
-          "target": [
-            35.14627,
-            33.06035,
-            1000
+          "path": [
+            [
+              35.14627,
+              33.06035,
+              1000
+            ],
+            [
+              35.13925,
+              33.09357,
+              1000
+            ],
+            [
+              35.13585,
+              33.09918,
+              1000
+            ],
+            [
+              35.1269,
+              33.1135,
+              1000
+            ],
+            [
+              35.13669,
+              33.12069,
+              1000
+            ],
+            [
+              35.14199,
+              33.10119,
+              1000
+            ],
+            [
+              35.14118,
+              33.09929,
+              1000
+            ],
+            [
+              35.14627,
+              33.06035,
+              1000
+            ]
           ]
         }
       ],
-      "extruded": true,
+      "etWidth": 5,
       "getColor": [
         144,
         238,
-        144,
-        255
+        144
       ],
-      "getSourcePosition": "@@=source",
-      "getTargetPosition": "@@=target",
-      "getWidth": 5,
-      "id": "b73b6e72-c955-4a25-ac35-e2db9be35331",
+      "getPath": "@@=path",
+      "getWidth": 3,
+      "id": "cf5b0134-390b-4f8d-965f-51a646ddf27e",
       "pickable": true,
-      "wireframe": true
+      "widthMinPixels": 2,
+      "widthScale": 20
     },
     {
       "@@type": "TextLayer",
       "data": [
         {
+          "altitude": 1000,
           "drone_id": "first",
-          "source": [
-            35.14627,
-            33.06035,
-            1000
-          ],
-          "target": [
-            35.14627,
-            33.06035,
-            1000
-          ]
+          "latitude": 33.09357,
+          "longitude": 35.13925
         }
       ],
       "getAlignmentBaseline": "center",
@@ -219,293 +241,56 @@
         144,
         255
       ],
-      "getPosition": "@@=target",
-      "getSize": 16,
+      "getPosition": "@@=[longitude, latitude, altitude]",
+      "getSize": 24,
       "getText": "@@=drone_id",
       "getTextAnchor": "middle",
-      "id": "cecc67a5-fe85-4224-b401-c6fab0fa5e91"
+      "id": "608d248d-cc1e-497b-ad2d-bc8cf46b5a67"
     },
     {
-      "@@type": "LineLayer",
-      "autoHighlight": true,
+      "@@type": "PathLayer",
       "data": [
         {
-          "drone_id": "second",
-          "source": [
-            35.14627,
-            33.06035,
-            1000
-          ],
-          "target": [
-            35.15152,
-            33.10001,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.15152,
-            33.10001,
-            1000
-          ],
-          "target": [
-            35.16032,
-            33.10925,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.16032,
-            33.10925,
-            1000
-          ],
-          "target": [
-            35.15402,
-            33.11903,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.15402,
-            33.11903,
-            1000
-          ],
-          "target": [
-            35.13669,
-            33.12069,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.13669,
-            33.12069,
-            1000
-          ],
-          "target": [
-            35.1269,
-            33.1135,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.1269,
-            33.1135,
-            1000
-          ],
-          "target": [
-            35.13585,
-            33.09918,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.13585,
-            33.09918,
-            1000
-          ],
-          "target": [
-            35.14199,
-            33.10119,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.14199,
-            33.10119,
-            1000
-          ],
-          "target": [
-            35.14118,
-            33.09929,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.14118,
-            33.09929,
-            1000
-          ],
-          "target": [
-            35.13925,
-            33.09357,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.13925,
-            33.09357,
-            1000
-          ],
-          "target": [
-            35.14627,
-            33.06035,
-            1000
+          "path": [
+            [
+              35.14627,
+              33.06035,
+              1000
+            ],
+            [
+              35.19115,
+              33.1243,
+              1000
+            ],
+            [
+              35.14627,
+              33.06035,
+              1000
+            ]
           ]
         }
       ],
-      "extruded": true,
+      "etWidth": 5,
       "getColor": [
         0,
         255,
-        255,
         255
       ],
-      "getSourcePosition": "@@=source",
-      "getTargetPosition": "@@=target",
-      "getWidth": 5,
-      "id": "1688d42d-55fd-446e-aec0-f59ba08e46a2",
+      "getPath": "@@=path",
+      "getWidth": 3,
+      "id": "499cd6c0-a129-47b9-9e77-a6647f10de38",
       "pickable": true,
-      "wireframe": true
+      "widthMinPixels": 2,
+      "widthScale": 20
     },
     {
       "@@type": "TextLayer",
       "data": [
         {
+          "altitude": 1000,
           "drone_id": "second",
-          "source": [
-            35.14627,
-            33.06035,
-            1000
-          ],
-          "target": [
-            35.15152,
-            33.10001,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.15152,
-            33.10001,
-            1000
-          ],
-          "target": [
-            35.16032,
-            33.10925,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.16032,
-            33.10925,
-            1000
-          ],
-          "target": [
-            35.15402,
-            33.11903,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.15402,
-            33.11903,
-            1000
-          ],
-          "target": [
-            35.13669,
-            33.12069,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.13669,
-            33.12069,
-            1000
-          ],
-          "target": [
-            35.1269,
-            33.1135,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.1269,
-            33.1135,
-            1000
-          ],
-          "target": [
-            35.13585,
-            33.09918,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.13585,
-            33.09918,
-            1000
-          ],
-          "target": [
-            35.14199,
-            33.10119,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.14199,
-            33.10119,
-            1000
-          ],
-          "target": [
-            35.14118,
-            33.09929,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.14118,
-            33.09929,
-            1000
-          ],
-          "target": [
-            35.13925,
-            33.09357,
-            1000
-          ]
-        },
-        {
-          "drone_id": "second",
-          "source": [
-            35.13925,
-            33.09357,
-            1000
-          ],
-          "target": [
-            35.14627,
-            33.06035,
-            1000
-          ]
+          "latitude": 33.1243,
+          "longitude": 35.19115
         }
       ],
       "getAlignmentBaseline": "center",
@@ -516,189 +301,86 @@
         255,
         255
       ],
-      "getPosition": "@@=target",
-      "getSize": 16,
+      "getPosition": "@@=[longitude, latitude, altitude]",
+      "getSize": 24,
       "getText": "@@=drone_id",
       "getTextAnchor": "middle",
-      "id": "1c9ceca3-f1ae-4866-b74a-58e0e455db11"
+      "id": "061b46e8-5a33-49d1-8adb-917c9e1bfd2d"
     },
     {
-      "@@type": "LineLayer",
-      "autoHighlight": true,
+      "@@type": "PathLayer",
       "data": [
         {
-          "drone_id": "third",
-          "source": [
-            35.14627,
-            33.06035,
-            1000
-          ],
-          "target": [
-            35.16036,
-            33.094,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.16036,
-            33.094,
-            1000
-          ],
-          "target": [
-            35.16774,
-            33.09616,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.16774,
-            33.09616,
-            1000
-          ],
-          "target": [
-            35.19115,
-            33.1243,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.19115,
-            33.1243,
-            1000
-          ],
-          "target": [
-            35.18285,
-            33.10269,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.18285,
-            33.10269,
-            1000
-          ],
-          "target": [
-            35.18114,
-            33.09888,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.18114,
-            33.09888,
-            1000
-          ],
-          "target": [
-            35.14627,
-            33.06035,
-            1000
+          "path": [
+            [
+              35.14627,
+              33.06035,
+              1000
+            ],
+            [
+              35.15152,
+              33.10001,
+              1000
+            ],
+            [
+              35.15402,
+              33.11903,
+              1000
+            ],
+            [
+              35.16032,
+              33.10925,
+              1000
+            ],
+            [
+              35.18285,
+              33.10269,
+              1000
+            ],
+            [
+              35.18114,
+              33.09888,
+              1000
+            ],
+            [
+              35.16774,
+              33.09616,
+              1000
+            ],
+            [
+              35.16036,
+              33.094,
+              1000
+            ],
+            [
+              35.14627,
+              33.06035,
+              1000
+            ]
           ]
         }
       ],
-      "extruded": true,
+      "etWidth": 5,
       "getColor": [
         245,
         222,
-        179,
-        255
+        179
       ],
-      "getSourcePosition": "@@=source",
-      "getTargetPosition": "@@=target",
-      "getWidth": 5,
-      "id": "6d20b5bd-0d6a-4835-a7c5-acef3dbf1c34",
+      "getPath": "@@=path",
+      "getWidth": 3,
+      "id": "75d6073a-bd82-4cc8-b862-c3b4189bfead",
       "pickable": true,
-      "wireframe": true
+      "widthMinPixels": 2,
+      "widthScale": 20
     },
     {
       "@@type": "TextLayer",
       "data": [
         {
+          "altitude": 1000,
           "drone_id": "third",
-          "source": [
-            35.14627,
-            33.06035,
-            1000
-          ],
-          "target": [
-            35.16036,
-            33.094,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.16036,
-            33.094,
-            1000
-          ],
-          "target": [
-            35.16774,
-            33.09616,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.16774,
-            33.09616,
-            1000
-          ],
-          "target": [
-            35.19115,
-            33.1243,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.19115,
-            33.1243,
-            1000
-          ],
-          "target": [
-            35.18285,
-            33.10269,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.18285,
-            33.10269,
-            1000
-          ],
-          "target": [
-            35.18114,
-            33.09888,
-            1000
-          ]
-        },
-        {
-          "drone_id": "third",
-          "source": [
-            35.18114,
-            33.09888,
-            1000
-          ],
-          "target": [
-            35.14627,
-            33.06035,
-            1000
-          ]
+          "latitude": 33.10001,
+          "longitude": 35.15152
         }
       ],
       "getAlignmentBaseline": "center",
@@ -709,11 +391,11 @@
         179,
         255
       ],
-      "getPosition": "@@=target",
-      "getSize": 16,
+      "getPosition": "@@=[longitude, latitude, altitude]",
+      "getSize": 24,
       "getText": "@@=drone_id",
       "getTextAnchor": "middle",
-      "id": "5be1efb3-ab9c-4c63-bbe3-825e8d764ddd"
+      "id": "af2cd49a-acac-452c-a6ea-16e4ddd831b4"
     },
     {
       "@@type": "PolygonLayer",
@@ -747,7 +429,48 @@
         100
       ],
       "getPolygon": "@@=-",
-      "id": "eb6f2ac5-1ec2-46cd-8e7e-511008532153",
+      "id": "bdc888d9-73bc-4d2d-9e7e-52ce4aa0a527",
+      "pickable": true,
+      "stroked": false,
+      "wireframe": true
+    },
+    {
+      "@@type": "PolygonLayer",
+      "autoHighlight": true,
+      "data": [
+        [
+          [
+            35.15697128055,
+            33.107063367495
+          ],
+          [
+            35.159031217074,
+            33.100520570157
+          ],
+          [
+            35.167871777987,
+            33.103324685807
+          ],
+          [
+            35.159889523958,
+            33.107279055816
+          ],
+          [
+            35.15697128055,
+            33.107063367495
+          ]
+        ]
+      ],
+      "extruded": true,
+      "getElevation": 2000,
+      "getFillColor": [
+        245,
+        222,
+        179,
+        100
+      ],
+      "getPolygon": "@@=-",
+      "id": "f68b4870-b0c7-411c-9b75-4e6664f2c4de",
       "pickable": true,
       "stroked": false,
       "wireframe": true
